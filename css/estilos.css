@@ -1,0 +1,228 @@
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  :root {
+    --card-height: 65vh;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+
+body{
+    background-image: url(../img/fundo_pc.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    color: white;
+    font-size: 16px;
+    display: flex;  
+    justify-content: center; 
+    align-items: center;
+    min-height: 100vh;  
+    padding: 30px;
+}   
+.aa{
+    width: 96px;
+    height: 96px;
+}
+.card{
+    background: #191c29;
+    width: 370px;
+    position: relative;
+    border-radius:  5px;  
+}
+
+.card::before {
+   content: "";
+   width: 104%;
+   height: 102%;
+   border-radius: 8px;
+   background-image: linear-gradient(
+     var(--rotate)
+     , #5ddcff, #3c67e3 43%, #4e00c2);
+     position: absolute;
+     z-index: -1;
+     top: -1%;
+     left: -2%;
+     animation: spin 2.5s linear infinite;
+}
+  
+  .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+  
+
+.card .my-information{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.card .my-information img{
+    border-radius: 50px;
+    border: 3px solid #6614d1;
+    
+}
+
+.card .my-information .nome{
+    font-size: 26px;
+}
+
+.card .my-information .cargo{
+    font-size: 20px;
+    color: #b8bbc5;
+}
+
+.card .conteudo{
+    margin-top: 15px;
+}
+
+.card .abas{
+    display: flex;
+}
+
+.card .abas .aba{
+    width: 33.3%; 
+    display: flex;
+    justify-content: center;  
+    padding: 10px 0;
+    cursor: pointer; 
+    transition: background-color 0.2s ease-in-out 
+}
+
+.card .abas img{
+    width: 30px;
+}
+
+.card .abas .aba.selecionado{
+    background-color: #13151f;
+}
+
+.card .informacoes-abas{
+    background-color: #13151f;
+}
+
+.card .abas .aba:hover{
+    background-color: #414141;
+} 
+
+.informacoes-abas .informacao{
+    min-height: 300px;
+    padding: 15px;
+    display: none;
+}
+
+.informacoes-abas .informacao.selecionado{
+    display: block;
+}
+
+.informacoes-abas .sub-titulo{
+    font-size: 22px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.informacoes-abas .descricao{
+    font-size: 20px; 
+    max-height: 180px; 
+    overflow-y: auto; 
+    padding-right: 15px;
+    
+}
+
+.informacoes-abas .descricao span{
+    color: #02d08f;
+}
+
+.redes-sociais{
+    display: flex; 
+    flex-direction: column; 
+    gap: 25px; 
+    align-items: center;
+    max-height: 180px;
+}
+
+.minhas-redes{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.redes-sociais li a{
+    width: 250px;
+    display: block; 
+    color: white;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    transition: opacity 0.2s;
+}
+
+.redes-sociais li a:hover{
+    opacity: 0.8;
+}
+
+.redes-sociais .curriculo{
+    background-color: #06c185;
+}
+
+.redes-sociais .linkedin{
+    background-color: #1d87bd;
+}
+
+.redes-sociais .github{
+    background-color: #545454;
+}
+
+.informacao .conhecimento{
+    font-size: 20px; 
+    max-height: 180px; 
+    overflow-y: auto; 
+    padding-right: 15px;
+    
+}
+
+.informacao{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 15px;
+    overflow-y: auto; 
+    display: flex; 
+    flex-direction: column;
+    gap: 25px; 
+    align-items: center;
+    max-height: 180px;
+}

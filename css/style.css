@@ -1,0 +1,14 @@
+*{
+    margin: 0; /* espaçamento externo */
+    padding: 0; /* espaçamento interno */
+    box-sizing: border-box; /* facilitar */
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;    /* reset */
+    color: black; /* cor da fonte */
+}
